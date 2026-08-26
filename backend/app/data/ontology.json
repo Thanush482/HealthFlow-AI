@@ -1,0 +1,260 @@
+{
+  "esi_scale": {
+    "1": "Resuscitation - immediate life-saving intervention required",
+    "2": "Emergent - high risk situation, severe pain/distress",
+    "3": "Urgent - stable but needs multiple resources",
+    "4": "Less Urgent - needs one resource",
+    "5": "Non-Urgent - needs no resources"
+  },
+  "pathways": [
+    {
+      "id": "P001",
+      "name": "Acute Coronary Syndrome",
+      "snomed_ct": "394659003",
+      "icd10": "I21.9",
+      "keywords": ["chest pain", "chest pressure", "chest tightness", "left arm pain", "jaw pain", "sweating", "radiating pain", "crushing pain"],
+      "base_esi": 2,
+      "required_ward": "Emergency",
+      "required_equipment": ["cardiac_monitor", "ecg"],
+      "evidence": "Chest pain/pressure with radiation, diaphoresis or dyspnea is consistent with Acute Coronary Syndrome (ICD-10 I21.9). Standard protocol places this at ESI-2 pending ECG and troponin.",
+      "isolation_required": false
+    },
+    {
+      "id": "P002",
+      "name": "Acute Ischemic Stroke",
+      "snomed_ct": "422504002",
+      "icd10": "I63.9",
+      "keywords": ["slurred speech", "facial droop", "weakness on one side", "vision loss", "confusion", "difficulty speaking", "numbness one side", "balance problem"],
+      "base_esi": 1,
+      "required_ward": "Emergency",
+      "required_equipment": ["ct_scanner_access", "cardiac_monitor"],
+      "evidence": "Sudden focal neurological deficit (facial droop, slurred speech, unilateral weakness) meets FAST stroke criteria. Time-critical, ESI-1.",
+      "isolation_required": false
+    },
+    {
+      "id": "P003",
+      "name": "Sepsis / Severe Infection",
+      "snomed_ct": "91302008",
+      "icd10": "A41.9",
+      "keywords": ["high fever", "fever", "chills", "rapid heart rate", "confusion", "low blood pressure", "shortness of breath", "lethargy"],
+      "base_esi": 2,
+      "required_ward": "Emergency",
+      "required_equipment": ["cardiac_monitor", "iv_pump"],
+      "evidence": "Fever with altered mentation and hemodynamic instability meets qSOFA-suggestive criteria for sepsis. ESI-2, requires rapid antibiotics/fluids.",
+      "isolation_required": true
+    },
+    {
+      "id": "P004",
+      "name": "Anaphylaxis / Severe Allergic Reaction",
+      "snomed_ct": "39579001",
+      "icd10": "T78.2",
+      "keywords": ["difficulty breathing", "throat swelling", "hives", "swelling face", "wheezing", "allergic reaction", "stridor", "tongue swelling"],
+      "base_esi": 1,
+      "required_ward": "Emergency",
+      "required_equipment": ["cardiac_monitor", "airway_kit"],
+      "evidence": "Airway/breathing compromise with allergic trigger indicates anaphylaxis. Immediate epinephrine protocol, ESI-1.",
+      "isolation_required": false
+    },
+    {
+      "id": "P005",
+      "name": "Severe Trauma / Hemorrhage",
+      "snomed_ct": "417163006",
+      "icd10": "T14.90",
+      "keywords": ["severe bleeding", "heavy bleeding", "car accident", "fall from height", "open wound", "unresponsive", "head injury", "crush injury"],
+      "base_esi": 1,
+      "required_ward": "Emergency",
+      "required_equipment": ["trauma_bay", "blood_bank_access"],
+      "evidence": "Mechanism of injury and active hemorrhage or unresponsiveness indicate major trauma. ESI-1, trauma team activation.",
+      "isolation_required": false
+    },
+    {
+      "id": "P006",
+      "name": "Acute Asthma / Respiratory Distress",
+      "snomed_ct": "195967001",
+      "icd10": "J45.901",
+      "keywords": ["wheezing", "shortness of breath", "difficulty breathing", "cough", "chest tightness", "using inhaler"],
+      "base_esi": 3,
+      "required_ward": "Emergency",
+      "required_equipment": ["nebulizer", "pulse_oximeter"],
+      "evidence": "Wheezing with dyspnea suggests acute asthma exacerbation. ESI-3 unless severe respiratory failure signs present.",
+      "isolation_required": false
+    },
+    {
+      "id": "P007",
+      "name": "Diabetic Emergency (DKA/Hypoglycemia)",
+      "snomed_ct": "46635009",
+      "icd10": "E11.65",
+      "keywords": ["high blood sugar", "low blood sugar", "confusion", "excessive thirst", "fruity breath", "shaking", "sweating", "diabetic"],
+      "base_esi": 2,
+      "required_ward": "Emergency",
+      "required_equipment": ["glucose_monitor", "iv_pump"],
+      "evidence": "Altered mentation with known/suspected glycemic derangement requires urgent glucose correction. ESI-2.",
+      "isolation_required": false
+    },
+    {
+      "id": "P008",
+      "name": "Acute Abdomen / Appendicitis",
+      "snomed_ct": "74400008",
+      "icd10": "K35.80",
+      "keywords": ["abdominal pain", "stomach pain", "right lower abdominal pain", "nausea", "vomiting", "fever", "rebound tenderness"],
+      "base_esi": 3,
+      "required_ward": "General Surgery",
+      "required_equipment": ["ultrasound_access"],
+      "evidence": "Localized abdominal pain with nausea/fever is consistent with acute appendicitis pathway. ESI-3, surgical consult likely.",
+      "isolation_required": false
+    },
+    {
+      "id": "P009",
+      "name": "Extremity Fracture",
+      "snomed_ct": "125605004",
+      "icd10": "S52.9",
+      "keywords": ["broken bone", "fracture", "fell", "deformed limb", "cannot move arm", "cannot move leg", "swelling limb"],
+      "base_esi": 4,
+      "required_ward": "General Medicine",
+      "required_equipment": ["xray_access", "splint_kit"],
+      "evidence": "Deformity/pain after fall suggests fracture requiring imaging and splinting. ESI-4.",
+      "isolation_required": false
+    },
+    {
+      "id": "P010",
+      "name": "Migraine / Headache",
+      "snomed_ct": "37796009",
+      "icd10": "G43.909",
+      "keywords": ["headache", "migraine", "sensitivity to light", "nausea", "throbbing pain"],
+      "base_esi": 4,
+      "required_ward": "General Medicine",
+      "required_equipment": [],
+      "evidence": "Headache with photophobia and no focal neuro deficit is consistent with migraine. ESI-4.",
+      "isolation_required": false
+    },
+    {
+      "id": "P011",
+      "name": "Urinary Tract Infection",
+      "snomed_ct": "68566005",
+      "icd10": "N39.0",
+      "keywords": ["burning urination", "frequent urination", "lower abdominal pain", "urinary pain", "cloudy urine"],
+      "base_esi": 4,
+      "required_ward": "General Medicine",
+      "required_equipment": [],
+      "evidence": "Dysuria and urinary frequency without systemic signs is a routine UTI presentation. ESI-4.",
+      "isolation_required": false
+    },
+    {
+      "id": "P012",
+      "name": "Minor Laceration / Wound",
+      "snomed_ct": "312608009",
+      "icd10": "S01.90",
+      "keywords": ["small cut", "minor cut", "laceration", "bleeding a little", "scrape"],
+      "base_esi": 5,
+      "required_ward": "General Medicine",
+      "required_equipment": ["suture_kit"],
+      "evidence": "Superficial wound without active major bleeding requires minimal resources. ESI-5.",
+      "isolation_required": false
+    },
+    {
+      "id": "P013",
+      "name": "Pediatric Fever",
+      "snomed_ct": "386661006",
+      "icd10": "R50.9",
+      "keywords": ["child fever", "baby fever", "infant fever", "high temperature child"],
+      "base_esi": 3,
+      "required_ward": "Pediatrics",
+      "required_equipment": ["pediatric_monitor"],
+      "evidence": "Fever in a young child warrants prompt evaluation given higher deterioration risk. ESI-3.",
+      "isolation_required": true
+    },
+    {
+      "id": "P014",
+      "name": "Psychiatric Crisis / Suicidal Ideation",
+      "snomed_ct": "6471006",
+      "icd10": "R45.851",
+      "keywords": ["suicidal", "self harm", "want to die", "suicide plan", "harming myself", "mental health crisis"],
+      "base_esi": 2,
+      "required_ward": "Psychiatric",
+      "required_equipment": ["safe_room"],
+      "evidence": "Expressed suicidal ideation requires urgent psychiatric safety evaluation. ESI-2, 1:1 observation indicated.",
+      "isolation_required": false
+    },
+    {
+      "id": "P015",
+      "name": "Mild Allergic Reaction",
+      "snomed_ct": "419076005",
+      "icd10": "T78.40",
+      "keywords": ["mild rash", "itching", "hives no breathing problem", "skin reaction"],
+      "base_esi": 4,
+      "required_ward": "General Medicine",
+      "required_equipment": [],
+      "evidence": "Localized skin reaction without airway or systemic involvement is low acuity. ESI-4.",
+      "isolation_required": false
+    },
+    {
+      "id": "P016",
+      "name": "Low Back Pain",
+      "snomed_ct": "279039007",
+      "icd10": "M54.5",
+      "keywords": ["back pain", "lower back pain", "muscle spasm back"],
+      "base_esi": 5,
+      "required_ward": "General Medicine",
+      "required_equipment": [],
+      "evidence": "Mechanical low back pain without red-flag neuro signs is non-urgent. ESI-5.",
+      "isolation_required": false
+    }
+  ],
+  "red_flag_rules": [
+    {
+      "id": "RF001",
+      "name": "Cardiac + Diaphoresis",
+      "any_of": ["chest pain", "chest pressure", "crushing pain"],
+      "with_any_of": ["sweating", "shortness of breath", "left arm pain", "jaw pain"],
+      "forced_esi": 1,
+      "required_ward": "Emergency",
+      "required_equipment": ["cardiac_monitor", "ecg"],
+      "isolation_required": false,
+      "message": "Deterministic override: chest pain combined with diaphoresis/dyspnea/radiation triggers immediate ACS escalation regardless of AI confidence."
+    },
+    {
+      "id": "RF002",
+      "name": "Stroke FAST Criteria",
+      "any_of": ["slurred speech", "facial droop", "weakness on one side", "difficulty speaking"],
+      "with_any_of": ["confusion", "vision loss", "numbness one side", "balance problem", "slurred speech", "facial droop"],
+      "forced_esi": 1,
+      "required_ward": "Emergency",
+      "required_equipment": ["ct_scanner_access", "cardiac_monitor"],
+      "isolation_required": false,
+      "message": "Deterministic override: FAST-positive neurological deficit triggers immediate stroke escalation."
+    },
+    {
+      "id": "RF003",
+      "name": "Airway Compromise",
+      "any_of": ["difficulty breathing", "throat swelling", "stridor", "tongue swelling", "wheezing"],
+      "with_any_of": ["allergic reaction", "hives", "swelling face"],
+      "forced_esi": 1,
+      "required_ward": "Emergency",
+      "required_equipment": ["cardiac_monitor", "airway_kit"],
+      "isolation_required": false,
+      "message": "Deterministic override: airway compromise with allergic trigger forces anaphylaxis protocol."
+    },
+    {
+      "id": "RF004",
+      "name": "Uncontrolled Hemorrhage / Unresponsive",
+      "any_of": ["severe bleeding", "heavy bleeding", "unresponsive", "not breathing"],
+      "with_any_of": ["severe bleeding", "heavy bleeding", "unresponsive", "not breathing", "car accident", "fall from height"],
+      "forced_esi": 1,
+      "required_ward": "Emergency",
+      "required_equipment": ["trauma_bay", "blood_bank_access"],
+      "isolation_required": false,
+      "message": "Deterministic override: active major hemorrhage or unresponsiveness forces trauma-1 activation."
+    },
+    {
+      "id": "RF005",
+      "name": "Active Suicidal Plan",
+      "any_of": ["suicide plan", "want to die", "harming myself"],
+      "with_any_of": ["suicide plan", "want to die", "harming myself", "suicidal"],
+      "forced_esi": 1,
+      "required_ward": "Psychiatric",
+      "required_equipment": ["safe_room"],
+      "isolation_required": false,
+      "message": "Deterministic override: expressed active suicidal plan/intent forces immediate 1:1 psychiatric safety observation."
+    }
+  ]
+}

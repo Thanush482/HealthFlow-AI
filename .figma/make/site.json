@@ -1,0 +1,10 @@
+{
+  "description": "Creates a professional, fully customized website tailored to showcase your content and enhance your online presence with ease and style.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

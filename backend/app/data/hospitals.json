@@ -1,0 +1,36 @@
+{
+  "hospitals": [
+    {
+      "id": "HOSP-CTR",
+      "name": "City Central Hospital",
+      "address": "Sayajigunj, Vadodara",
+      "latitude": 22.3080,
+      "longitude": 73.1810,
+      "phone": "+91-265-555-0101"
+    },
+    {
+      "id": "HOSP-RIV",
+      "name": "Riverside General Hospital",
+      "address": "Fatehgunj, Vadodara",
+      "latitude": 22.3260,
+      "longitude": 73.1950,
+      "phone": "+91-265-555-0202"
+    },
+    {
+      "id": "HOSP-NGT",
+      "name": "Northgate Medical Center",
+      "address": "Gotri, Vadodara",
+      "latitude": 22.3340,
+      "longitude": 73.1550,
+      "phone": "+91-265-555-0303"
+    },
+    {
+      "id": "HOSP-EST",
+      "name": "Eastside Community Hospital",
+      "address": "Waghodia Road, Vadodara",
+      "latitude": 22.2990,
+      "longitude": 73.2280,
+      "phone": "+91-265-555-0404"
+    }
+  ]
+}
